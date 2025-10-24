@@ -4,6 +4,8 @@ import { JwtModule } from '@nestjs/jwt';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { config } from 'src/config';
 import { RedisModule } from 'src/core/redis/redis.module';
+import { AdminModule } from './members/admin/admin.module';
+import { UserModule } from './members/user/user.module';
 
 @Module({
   imports: [
@@ -22,6 +24,8 @@ import { RedisModule } from 'src/core/redis/redis.module';
     }),
 
     RedisModule,
+    AdminModule,
+    UserModule,
   ],
 })
 export class AppModule {}
